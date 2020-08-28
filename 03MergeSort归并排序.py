@@ -31,7 +31,7 @@ def MergeSort(arr):
 
 
 # 最优时间复杂度 O(nlogn)
-# 最优空间复杂度 O(n + logn)
+# 最差空间复杂度 O(n + logn)
 if __name__ == '__main__':
     s = [1, 7, 3, 5, 4, 2, 5, 3]
     MergeSort(s)

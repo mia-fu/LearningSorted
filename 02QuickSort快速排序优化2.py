@@ -11,19 +11,18 @@ def partition(arr, low, high):
     if arr[mid] > arr[low]:
         arr[mid], arr[low] = arr[low], arr[mid]
 
-    pivotKey = arr[low]
-    # 设置一个哨兵元素
-    pre = pivotKey
+
     while low < high:
+        # 设置一个哨兵元素
+        pivotKey = arr[low]
         while low < high and arr[high] >= pivotKey:
             high -= 1
         # 采用替换而不是交换
         arr[low] = arr[high]
-
         while low < high and arr[low] <= pivotKey:
             low += 1
         arr[high] = arr[low]
-        arr[low] = pre
+        arr[low] = pivotKey
 
     return low
 

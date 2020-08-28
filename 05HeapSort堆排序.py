@@ -14,11 +14,6 @@ def swap(l, i, j):
     l[i], l[j] = l[j], l[i]
     return l
 
-def swap_param(L, i, j):
-    L[i], L[j] = L[j], L[i]
-    return L
-
-
 # 调整堆
 def heap_adjust(arr, start, end):
     temp = arr[start]
@@ -60,7 +55,7 @@ def heap_sort(arr):
     # 从后往前将堆顶元素和堆末尾元素进行交换， 然后把剩下的元素调整为一个大根堆
     for i in range(l_len, 0, -1):
         # 将堆顶记录和当前未经排序的子序列的最后一个记录交换
-        l = swap_param(l, 1, i)
+        l = swap(l, 1, i)
         # 将[1 ~ i-1]重新调整为大顶堆
         heap_adjust(l, 1, i - 1)
     # print(l)
